@@ -1,4 +1,4 @@
-![Shreyash's Contribution Graph](https://ghchart.rshah.org/ShreyashDhakate)
+![Shreyash's Contribution Graph](https://ghchart.rshah.org/409ba5/ShreyashDhakate)
 <h1 align="center">Hi 👋, I'm Shreyash Dhakate</h1>
 <h3 align="center">A passionate Software developer from India</h3>
 
