@@ -4,5 +4,3 @@
 
 - 📫 How to reach me **Shreyashgirdharidhakate@gmail.com**
 
-<h3 align="left">Connect with me:</h3>
-
