@@ -1,4 +1,4 @@
-![Shreyash's GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=ShreyashDhakate&theme=dark)
+![Shreyash's Contribution Grid](https://raw.githubusercontent.com/ShreyashDhakate/ShreyashDhakate/main/contribution-grid.svg)
 <h1 align="center">Hi 👋, I'm Shreyash Dhakate</h1>
 <h3 align="center">A passionate Software developer from India</h3>
 
