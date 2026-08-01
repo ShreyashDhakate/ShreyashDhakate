@@ -1,4 +1,4 @@
-![Shreyash's Contribution Graph](https://ghchart.rshah.org/409ba5/ShreyashDhakate)
+![Shreyash's GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=ShreyashDhakate&theme=dark)
 <h1 align="center">Hi 👋, I'm Shreyash Dhakate</h1>
 <h3 align="center">A passionate Software developer from India</h3>
 
