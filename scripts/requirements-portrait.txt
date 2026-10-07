@@ -1,0 +1,2 @@
+# Only needed to replace the portrait; the daily workflow has no pip dependencies.
+Pillow>=10.4,<13

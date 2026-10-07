@@ -1,0 +1,45 @@
+name: Update profile art
+
+"on":
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - "profile.json"
+      - ".github/workflows/update-profile-art.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-art-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch real contributions and generate SVGs
+        run: python scripts/build_profile.py
+      - name: Commit updated art
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/contributions.json assets/contrib-heatmap.svg assets/info-card.svg
+          if git diff --cached --quiet; then
+            echo "Profile art is already current."
+            exit 0
+          fi
+          git commit -m "chore: refresh profile art [skip ci]"
+          git push

@@ -1,0 +1,16 @@
+{
+  "username": "ShreyashDhakate",
+  "name": "Shreyash Dhakate",
+  "rows": [
+    ["Role", "Backend software developer"],
+    ["Now", "SDE Intern @ Prozpr"],
+    ["Previously", "SDE Intern @ Enest"],
+    ["Education", "IIT Kharagpur | Dual Degree '28"],
+    ["Focus", "APIs, databases & real-time systems"],
+    ["Languages", "Python / C++ / Java / TypeScript"],
+    ["Backend", "FastAPI / Node.js / PostgreSQL"],
+    ["Systems", "Kafka / Redis / gRPC / Linux"],
+    ["Delivery", "AWS / Docker / GitHub Actions"],
+    ["CP", "Codeforces Expert | max. 1642"]
+  ]
+}
