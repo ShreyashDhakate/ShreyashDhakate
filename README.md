@@ -22,9 +22,9 @@ I build backend services for financial and education products, from APIs and dat
 
 | Project | What I built | Stack |
 | --- | --- | --- |
-| [Real-Time Fraud Detection](https://github.com/ShreyashDhakate/Real-Time-Fraud-Detection) | Transaction features, recoverable stream processing, and gRPC risk scoring. | Python · Kafka · Redis · XGBoost · gRPC |
-| [gambitd](https://github.com/ShreyashDhakate/Chess-Engine) | A chess engine and WebSocket server, with alpha-beta search and a Linux `epoll` event loop. | C++17 · Linux · WebSocket |
-| [Video Conferencing](https://github.com/ShreyashDhakate/Video_Conference) | Browser meetings with audio/video, screen sharing, and room-based chat. | React · Node.js · WebRTC · Socket.IO |
+| [Real-Time Fraud Detection & Risk Scoring Pipeline](https://github.com/ShreyashDhakate/Real-Time-Fraud-Detection) | Transaction features, recoverable stream processing, and gRPC risk scoring. | Python · Kafka · Redis · XGBoost · gRPC |
+| [gambitd: Chess Engine & WebSocket Server](https://github.com/ShreyashDhakate/Chess-Engine) | A chess engine and WebSocket server, with tested move ordering and a Linux `epoll` event loop. | C++17 · Linux · WebSocket |
+| [Concurrent Order Processing & Matching Service](https://github.com/ShreyashDhakate/Limit-Order-Book) | Order processing with mutex-guarded shared state, indexed cancellation and 47 correctness checks. | C++17 · HTTP · std::mutex |
 
 <div align="center">
 
@@ -32,6 +32,7 @@ I build backend services for financial and education products, from APIs and dat
 
 [Email](mailto:Shreyashgirdharidhakate@gmail.com) · [Repositories](https://github.com/ShreyashDhakate?tab=repositories)
 
-<sub>Animated SVGs generated in this repository. Contribution data refreshed daily with GitHub Actions.</sub>
+<sub>Animated SVGs generated in this repository. Contribution refresh runs daily; the image shows its snapshot date and retains saved history when the feed has a different visibility.</sub>
 
 </div>
+

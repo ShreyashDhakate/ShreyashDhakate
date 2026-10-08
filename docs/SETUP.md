@@ -54,6 +54,7 @@ The portrait preprocessing removes the yellow background in your existing avatar
 - It uses the public GitHub contribution calendar and Python's standard library. No personal access token or hosted stats widget is required. GitHub supplies the normal built-in workflow token to commit the generated files.
 - The graph displays the dates and counts returned by GitHub's public calendar, including any anonymous private-contribution counts your GitHub settings expose. It does not reveal private repository details.
 - The included graph is a real snapshot. Missing counts or an incomplete response fail the build and leave the committed graph intact rather than generating invented values.
+- A signed-in calendar and the public feed can expose different contribution history. If a refresh would zero at least 10 known active days and half of the overlapping active history, the renderer retains the previous snapshot and its original timestamp. Counts are never combined, padded or invented. A matching visibility is required for live updates of that saved history.
 - HTML scraping depends on GitHub's markup. If it changes, the parser may need updating. The last committed SVG remains available when a refresh fails.
 - SVGs use short, one-time native animations and contain no scripts, external fonts, or external image dependencies. GitHub/browser rendering and caching can affect replay; the artwork remains readable as static SVG.
 - A public repository's scheduled workflow can be disabled by GitHub after prolonged repository inactivity. Re-enable it from the Actions tab if needed.
@@ -63,3 +64,4 @@ If the workflow reports a write-permission error, check **Settings â†’ Actions â
 ## Credits
 
 Concept inspired by Avi Vashishta's guide: https://www.avivashishta.com/blog/build-animated-github-profile-readme. The Python implementation and profile art in this package are newly written for Shreyash Dhakate.
+

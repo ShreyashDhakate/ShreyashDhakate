@@ -174,6 +174,19 @@ def fetch_days(username, html_file):
     return parser.days()
 
 
+def validate_calendar_visibility(days, previous):
+    """Reject a narrower feed that would erase a large part of saved history."""
+    current = {day['date']: day['count'] for day in days}
+    active = [day for day in previous['days']
+              if day['count'] > 0 and day['date'] in current]
+    erased = [day for day in active if current[day['date']] == 0]
+    if len(erased) >= 10 and len(erased) * 2 >= len(active):
+        raise ValueError(
+            f'The feed would erase {len(erased)} of {len(active)} known active days. '
+            'Its contribution visibility does not match the saved calendar.'
+        )
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--html-file', help='Use a saved public contribution HTML response for validation.')
@@ -194,6 +207,13 @@ def main():
             'active_days': sum(day['count'] > 0 for day in days),
             'best_day': max(day['count'] for day in days), 'days': days,
         }
+        if snapshot.exists():
+            previous = json.loads(snapshot.read_text())
+            try:
+                validate_calendar_visibility(days, previous)
+            except ValueError as error:
+                print(f'{error} Retaining snapshot from {previous["fetched_at"]}.')
+                data = previous
     # Parse and validate before writing: a changed GitHub page must not erase real data.
     render_heatmap(data)
     render_info(profile)
@@ -206,3 +226,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
